@@ -16,3 +16,28 @@
 <br>
 
 This project is under rapid development, and the documentation is not yet mature. For now, implementation guidance can be found in the docstrings and comments in the source code.
+
+## Development
+
+This project uses [Black](https://black.readthedocs.io/) as its mandatory Python
+formatter. The exact Black version is pinned so local checks and CI produce the
+same result.
+
+```bash
+python -m pip install -r requirements-dev.txt
+pre-commit install
+```
+
+Format maintained Python code with:
+
+```bash
+black .
+```
+
+Run the same strict check enforced by commits and CI with:
+
+```bash
+black --check --diff .
+```
+
+Archived code under `legacy/` is intentionally excluded.
